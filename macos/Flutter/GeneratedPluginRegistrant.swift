@@ -11,9 +11,12 @@ import firebase_auth
 import firebase_core
 import firebase_messaging
 import firebase_storage
+<<<<<<< HEAD
 import geolocator_apple
 import package_info_plus
 import shared_preferences_foundation
+=======
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 import sqflite_darwin
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
@@ -23,8 +26,11 @@ func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   FLTFirebaseCorePlugin.register(with: registry.registrar(forPlugin: "FLTFirebaseCorePlugin"))
   FLTFirebaseMessagingPlugin.register(with: registry.registrar(forPlugin: "FLTFirebaseMessagingPlugin"))
   FLTFirebaseStoragePlugin.register(with: registry.registrar(forPlugin: "FLTFirebaseStoragePlugin"))
+<<<<<<< HEAD
   GeolocatorPlugin.register(with: registry.registrar(forPlugin: "GeolocatorPlugin"))
   FPPPackageInfoPlusPlugin.register(with: registry.registrar(forPlugin: "FPPPackageInfoPlusPlugin"))
   SharedPreferencesPlugin.register(with: registry.registrar(forPlugin: "SharedPreferencesPlugin"))
+=======
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
   SqflitePlugin.register(with: registry.registrar(forPlugin: "SqflitePlugin"))
 }

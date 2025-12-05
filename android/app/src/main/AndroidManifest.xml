@@ -1,12 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
+=======
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
     <application
         android:label="barber_panel"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+<<<<<<< HEAD
 
+=======
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -34,9 +40,12 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+<<<<<<< HEAD
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBou7yLG7rVTdVia1xOOD-sKrCcjIfnIhs"/>
+=======
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

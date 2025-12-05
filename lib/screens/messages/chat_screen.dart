@@ -8,7 +8,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
 import '../../models/chat_message.dart';
+<<<<<<< HEAD
 import '../../providers/firebase_auth_provider.dart';
+=======
+import '../../providers/auth_provider.dart';
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 import '../../providers/chat_provider.dart';
 
 class ChatScreen extends ConsumerStatefulWidget {

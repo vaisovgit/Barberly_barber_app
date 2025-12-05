@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+<<<<<<< HEAD
 import '../../providers/firebase_auth_provider.dart';
 import '../../providers/barber_provider.dart';
 import 'edit_profile_screen.dart';
 import '../map/location_screen.dart';
+=======
+import '../../providers/auth_provider.dart';
+import '../../providers/barber_provider.dart';
+import 'edit_profile_screen.dart';
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 import 'services_screen.dart';
 import 'working_hours_screen.dart';
 
@@ -117,6 +123,7 @@ class ProfileScreen extends ConsumerWidget {
                     );
                   },
                 ),
+<<<<<<< HEAD
                 _ProfileMenuItem(
                   icon: Icons.location_on,
                   title: 'Location',
@@ -130,6 +137,8 @@ class ProfileScreen extends ConsumerWidget {
                     );
                   },
                 ),
+=======
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
                 const Divider(height: 1),
                 _ProfileMenuItem(
                   icon: Icons.help_outline,
