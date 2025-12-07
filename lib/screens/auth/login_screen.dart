@@ -1,4 +1,3 @@
-import 'package:barber_panel/main.dart';
 import 'package:barber_panel/screens/main_navigation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -40,34 +39,34 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     super.dispose();
   }
 
-  Future<void> _loginFirebase() async {
-
-
-    if (!_formKey.currentState!.validate()) return;
-
-    setState(() => _isLoading = true);
-
-
-
-    try {
-      await ref
-          .read(authServiceProvider)
-          .signInWithEmailPassword(
-        "998909876546@yourapp.com",
-            "2006shukur"
-            // _emailController.text.trim(),
-            // _passwordController.text,
-          );
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Login failed: ${e.toString()}')),
-        );
-      }
-    } finally {
-      if (mounted) setState(() => _isLoading = false);
-    }
-  }
+  // Future<void> _loginFirebase() async {
+  //
+  //
+  //   if (!_formKey.currentState!.validate()) return;
+  //
+  //   setState(() => _isLoading = true);
+  //
+  //
+  //
+  //   try {
+  //     await ref
+  //         .read(authServiceProvider)
+  //         .signInWithEmailPassword(
+  //       "998909876546@yourapp.com",
+  //           "2006shukur"
+  //           // _emailController.text.trim(),
+  //           // _passwordController.text,
+  //         );
+  //   } catch (e) {
+  //     if (mounted) {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(content: Text('Login failed: ${e.toString()}')),
+  //       );
+  //     }
+  //   } finally {
+  //     if (mounted) setState(() => _isLoading = false);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -191,7 +190,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             onPressed: authState.status.isLoading
                                 ? null
                                 : () async {
-                              _loginFirebase();
+                              // _loginFirebase();
                               final phone =
                                   _emailController.text.trim();
                               final password = _passwordController.text;

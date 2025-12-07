@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../services/api_service.dart';
+import '../services/firebase_auth_service.dart';
 import '../storage/localstorage_service.dart';
 
 class AuthState {
@@ -33,11 +34,15 @@ class AuthController extends StateNotifier<AuthState> {
       api.setToken(token);
       await LocalStorage.saveToken(token);
 
+      final firebaseToken = res['data']['user']['firebase_token'];
+      await AuthService().signInWithCustomToken(firebaseToken);
+
       final user = res['data']['user']['name'];
       await LocalStorage.saveUsername(user);
 
       final role = res['data']['user']['role'];
       await LocalStorage.saveRole(role);
+
 
       state = state.copyWith(user: user, status: AsyncData(res));
     } catch (e, st) {
