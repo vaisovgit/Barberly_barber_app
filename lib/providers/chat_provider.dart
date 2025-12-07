@@ -2,7 +2,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/chat_message.dart';
 import '../services/chat_service.dart';
+<<<<<<< HEAD
 import 'firebase_auth_provider.dart';
+=======
+import 'auth_provider.dart';
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 
 final chatServiceProvider = Provider((ref) => ChatService());
 String? phoneFromPlaceholderEmail(String email) {

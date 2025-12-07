@@ -3,7 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/booking.dart';
 import '../services/booking_service.dart';
+<<<<<<< HEAD
 import 'firebase_auth_provider.dart';
+=======
+import 'auth_provider.dart';
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 
 final bookingServiceProvider = Provider((ref) => BookingService());
 

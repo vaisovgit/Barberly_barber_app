@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import 'package:barber_panel/providers/firebase_auth_provider.dart';
+=======
+import 'package:barber_panel/providers/auth_provider.dart';
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';

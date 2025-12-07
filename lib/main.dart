@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 import 'package:barber_panel/providers/firebase_auth_provider.dart';
+=======
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'screens/auth/login_screen.dart';
 import 'screens/main_navigation_screen.dart';
+<<<<<<< HEAD
 
+=======
+import 'providers/auth_provider.dart';
+>>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
