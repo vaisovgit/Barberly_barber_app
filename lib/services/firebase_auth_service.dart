@@ -9,41 +9,58 @@ class AuthService {
   Stream<User?> get authStateChanges => _auth.authStateChanges();
   User? get currentUser => _auth.currentUser;
 
-  Future<UserCredential> signInWithEmailPassword(
-    String email,
-    String password,
-  ) async {
-    return await _auth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-  }
+  // Future<UserCredential> signInWithEmailPassword(
+  //   String email,
+  //   String password,
+  // ) async {
+  //   return await _auth.signInWithEmailAndPassword(
+  //     email: email,
+  //     password: password,
+  //   );
+  // }
+  Future<UserCredential> signInWithCustomToken(String token) async {
+    final credential = await _auth.signInWithCustomToken(token);
 
-  Future<UserCredential> signUpWithEmailPassword(
-    String email,
-    String password,
-    String name,
-  ) async {
-    final credential = await _auth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-
-    await _firestore.collection('barbers').doc(credential.user!.uid).set({
-      'name': name,
-      'email': email,
-      'createdAt': DateTime.now().toIso8601String(),
-      'services': [],
-    });
+    final user = credential.user;
+    if (user != null) {
+      final doc = await _firestore.collection('barbers').doc(user.uid).get();
+      if (!doc.exists) {
+        await _firestore.collection('barbers').doc(user.uid).set({
+          'uid': user.uid,
+          'createdAt': FieldValue.serverTimestamp(),
+          'avatarUrl': 'https://i.pravatar.cc150?img=8',
+        });
+      }
+    }
 
     return credential;
   }
+
+  // Future<UserCredential> signUpWithEmailPassword(
+  //   String email,
+  //   String password,
+  //   String name,
+  // ) async {
+  //   final credential = await _auth.createUserWithEmailAndPassword(
+  //     email: email,
+  //     password: password,
+  //   );
+  //
+  //   await _firestore.collection('barbers').doc(credential.user!.uid).set({
+  //     'name': name,
+  //     'email': email,
+  //     'createdAt': DateTime.now().toIso8601String(),
+  //     'services': [],
+  //   });
+  //
+  //   return credential;
+  // }
 
   Future<void> signOut() async {
     await _auth.signOut();
   }
 
-  Future<void> resetPassword(String email) async {
-    await _auth.sendPasswordResetEmail(email: email);
-  }
+  // Future<void> resetPassword(String email) async {
+  //   await _auth.sendPasswordResetEmail(email: email);
+  // }
 }

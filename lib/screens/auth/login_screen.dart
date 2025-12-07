@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-import 'package:barber_panel/main.dart';
 import 'package:barber_panel/screens/main_navigation_screen.dart';
-=======
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../providers/auth_provider.dart';
-<<<<<<< HEAD
 import '../../providers/firebase_auth_provider.dart';
 import '../../storage/localstorage_service.dart';
 import '../home/home_screen.dart';
-=======
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -24,17 +17,13 @@ class LoginScreen extends ConsumerStatefulWidget {
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
-<<<<<<< HEAD
   // final _phoneController = PhoneController(
   //   const PhoneNumber(isoCode: IsoCode.UZ, nsn: ''),
   // );
-=======
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
   final _passwordController = TextEditingController();
-  bool _isLoading = false;
+  // bool _isLoading = false;
   bool _obscurePassword = true;
 
-<<<<<<< HEAD
   Future<void> login(String phone, String password) async {
     try {
       await ref.read(authControllerProvider.notifier).login(phone, password);
@@ -43,8 +32,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     }
   }
 
-=======
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
   @override
   void dispose() {
     _emailController.dispose();
@@ -52,50 +39,37 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     super.dispose();
   }
 
-<<<<<<< HEAD
-  Future<void> _loginFirebase() async {
-
-
-=======
-  Future<void> _login() async {
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
-    if (!_formKey.currentState!.validate()) return;
-
-    setState(() => _isLoading = true);
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
-    try {
-      await ref
-          .read(authServiceProvider)
-          .signInWithEmailPassword(
-<<<<<<< HEAD
-        "998909876546@yourapp.com",
-            "2006shukur"
-            // _emailController.text.trim(),
-            // _passwordController.text,
-=======
-            _emailController.text.trim(),
-            _passwordController.text,
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
-          );
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Login failed: ${e.toString()}')),
-        );
-      }
-    } finally {
-      if (mounted) setState(() => _isLoading = false);
-    }
-  }
+  // Future<void> _loginFirebase() async {
+  //
+  //
+  //   if (!_formKey.currentState!.validate()) return;
+  //
+  //   setState(() => _isLoading = true);
+  //
+  //
+  //
+  //   try {
+  //     await ref
+  //         .read(authServiceProvider)
+  //         .signInWithEmailPassword(
+  //       "998909876546@yourapp.com",
+  //           "2006shukur"
+  //           // _emailController.text.trim(),
+  //           // _passwordController.text,
+  //         );
+  //   } catch (e) {
+  //     if (mounted) {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(content: Text('Login failed: ${e.toString()}')),
+  //       );
+  //     }
+  //   } finally {
+  //     if (mounted) setState(() => _isLoading = false);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
 
     final authState = ref.watch(authControllerProvider);
 
@@ -123,8 +97,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       );
     });
 
-=======
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
     return Scaffold(
       backgroundColor: const Color(0xFF2C3E50),
       body: SafeArea(
@@ -214,12 +186,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           width: double.infinity,
                           height: 50,
                           child: ElevatedButton(
-<<<<<<< HEAD
 
                             onPressed: authState.status.isLoading
                                 ? null
                                 : () async {
-                              _loginFirebase();
+                              // _loginFirebase();
                               final phone =
                                   _emailController.text.trim();
                               final password = _passwordController.text;
@@ -242,18 +213,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             //           color: Colors.white,
                             //         ),
                             //       )
-=======
-                            onPressed: _isLoading ? null : _login,
-                            child: _isLoading
-                                ? const SizedBox(
-                                    height: 20,
-                                    width: 20,
-                                    child: CircularProgressIndicator(
-                                      strokeWidth: 2,
-                                      color: Colors.white,
-                                    ),
-                                  )
->>>>>>> e0dab743b36fb8223681963f40cf677510bf29f5
                                 : const Text(
                                     'Login',
                                     style: TextStyle(fontSize: 16),
