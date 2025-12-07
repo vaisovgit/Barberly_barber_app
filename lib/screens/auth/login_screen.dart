@@ -21,7 +21,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   //   const PhoneNumber(isoCode: IsoCode.UZ, nsn: ''),
   // );
   final _passwordController = TextEditingController();
-  bool _isLoading = false;
+  // bool _isLoading = false;
   bool _obscurePassword = true;
 
   Future<void> login(String phone, String password) async {
